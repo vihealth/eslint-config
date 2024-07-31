@@ -1,0 +1,29 @@
+{
+	"name": "@vihealth/eslint-config",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc",
+		"watch": "npx chokidar-cli 'src/**/*.ts' -c 'npm run build'",
+		"lint": "eslint src",
+		"lint:fix": "eslint src --fix"
+	},
+	"author": "",
+	"license": "MIT",
+	"description": "",
+	"dependencies": {
+		"@eslint/compat": "^1.1.1",
+		"@types/eslint-plugin-security": "^3.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.0.0-alpha.60",
+		"@typescript-eslint/parser": "^8.0.0-alpha.60",
+		"eslint-plugin-prettier": "^5.2.1",
+		"eslint-plugin-security": "^3.0.1",
+		"eslint-plugin-simple-import-sort": "^12.1.1"
+	},
+	"peerDependencies": {
+		"eslint": "^9.8.0"
+	},
+	"devDependencies": {
+		"eslint": "^9.8.0"
+	}
+}
