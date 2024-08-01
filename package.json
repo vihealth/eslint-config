@@ -4,9 +4,12 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "tsc",
-		"watch": "npx chokidar-cli 'src/**/*.ts' -c 'npm run build'",
+		"watch": "npm run build && npx chokidar-cli 'src/**/*.ts' -c 'npm run build'",
 		"lint": "eslint src",
 		"lint:fix": "eslint src --fix"
+	},
+	"bin": {
+		"vilint": "dist/run.js"
 	},
 	"author": "",
 	"license": "MIT",
@@ -16,6 +19,7 @@
 		"@types/eslint-plugin-security": "^3.0.0",
 		"@typescript-eslint/eslint-plugin": "^8.0.0-alpha.60",
 		"@typescript-eslint/parser": "^8.0.0-alpha.60",
+		"commander": "^12.1.0",
 		"eslint-plugin-prettier": "^5.2.1",
 		"eslint-plugin-security": "^3.0.1",
 		"eslint-plugin-simple-import-sort": "^12.1.1"
@@ -24,6 +28,7 @@
 		"eslint": "^9.8.0"
 	},
 	"devDependencies": {
+		"@types/node": "^22.0.2",
 		"eslint": "^9.8.0"
 	}
 }

@@ -1,6 +1,6 @@
-import type { Linter } from 'eslint';
+import type { ExtendedRulesRecord } from '../types';
 
 export default {
 	'importsort/exports': 'warn',
 	'importsort/imports': 'error',
-} as Linter.RulesRecord;
+} as ExtendedRulesRecord;

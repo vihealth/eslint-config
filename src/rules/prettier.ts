@@ -1,5 +1,5 @@
-import type { Linter } from 'eslint';
+import type { ExtendedRulesRecord } from '../types';
 
 export default {
 	'prettier/prettier': 'error',
-} as Linter.RulesRecord;
+} as ExtendedRulesRecord;

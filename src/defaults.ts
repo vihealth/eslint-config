@@ -1,6 +1,6 @@
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import * as eslintParser from '@typescript-eslint/parser';
-import type { ESLint, Linter } from 'eslint';
+import type { ESLint } from 'eslint';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginSecurity from 'eslint-plugin-security';
 import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
@@ -10,6 +10,7 @@ import simpleImportSortRules from './rules/importsort';
 import prettierRules from './rules/prettier';
 import securityRules from './rules/security';
 import typescriptEslintRules from './rules/typescript';
+import type { ExtendedConfig } from './types';
 
 export default {
 	files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
@@ -39,4 +40,4 @@ export default {
 		...securityRules,
 		...prettierRules,
 	},
-} as Linter.Config;
+} as ExtendedConfig;

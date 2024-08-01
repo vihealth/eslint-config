@@ -42,15 +42,15 @@ exports.default = {
     // Enforce consistent usage of type exports:
     'typescript/consistent-type-exports': 'warn',
     // Enforce consistent usage of type imports:
-    'typescript/consistent-type-imports': 'error',
+    'typescript/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
     // Enforce default parameters to be last:
     'typescript/default-param-last': 'warn',
     // Enforce dot notation whenever possible:
     'typescript/dot-notation': 'warn',
     // Require explicit return types on functions and class methods:
-    'typescript/explicit-function-return-type': 'error',
+    'typescript/explicit-function-return-type': 'error-when-staging',
     // Require explicit accessibility modifiers on class properties and methods:
-    'typescript/explicit-member-accessibility': 'error',
+    'typescript/explicit-member-accessibility': 'error-when-staging',
     // Require explicit return and argument types on exported functions' and classes' public class methods:
     'typescript/explicit-module-boundary-types': 'error',
     // Require or disallow spacing between function identifiers and their invocations:
@@ -103,7 +103,7 @@ exports.default = {
     // Disallow accidentally using the "empty object" type:
     'typescript/no-empty-object-type': 'warn',
     // Disallow the any type:
-    'typescript/no-explicit-any': 'warn',
+    'typescript/no-explicit-any': 'error',
     // Disallow extra non-null assertions:
     'typescript/no-extra-non-null-assertion': 'warn',
     // Disallow unnecessary parentheses:
@@ -113,7 +113,7 @@ exports.default = {
     // Disallow classes used as namespaces:
     'typescript/no-extraneous-class': 'warn',
     // Require Promise-like statements to be handled appropriately:
-    'typescript/no-floating-promises': 'warn',
+    'typescript/no-floating-promises': 'error-when-staging',
     // Disallow iterating over an array with a for-in loop:
     'typescript/no-for-in-array': 'warn',
     // Disallow the use of eval()-like methods:
@@ -214,7 +214,7 @@ exports.default = {
             caughtErrorsIgnorePattern: '^_',
             vars: 'all',
             varsIgnorePattern: '^_',
-        }
+        },
     ],
     // Disallow the use of variables before they are defined:
     'typescript/no-use-before-define': 'warn',
@@ -278,7 +278,8 @@ exports.default = {
     // Enforce using @ts-expect-error over @ts-ignore:
     'typescript/prefer-ts-expect-error': 'off',
     // Require any function or method that returns a Promise to be marked async:
-    'typescript/promise-function-async': 'warn',
+    'typescript/promise-function-async': 'off',
+    // Disabling because same functin should have a return type annotation -- and might not use `await`
     // Enforce the consistent use of either backticks, double, or single quotes:
     'typescript/quotes': 'off',
     // Require Array#sort and Array#toSorted calls to always provide a compareFunction:

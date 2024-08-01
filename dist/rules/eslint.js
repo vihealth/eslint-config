@@ -50,7 +50,7 @@ exports.default = {
         // Disallow duplicate case labels:
         'no-duplicate-case': 'warn',
         // Disallow duplicate module imports:
-        'no-duplicate-imports': 'warn',
+        'no-duplicate-imports': 'error',
         // Disallow empty character classes in regular expressions:
         'no-empty-character-class': 'warn',
         // Disallow empty destructuring patterns:
@@ -125,10 +125,10 @@ exports.default = {
         ],
         // Disallow the use of variables before they are defined:
         'no-use-before-define': [
-            'error',
+            'error-when-staging',
             {
-                functions: false,
                 classes: false,
+                functions: false,
                 variables: true,
             },
         ],
@@ -148,13 +148,20 @@ exports.default = {
         // Enforce getter and setter pairs in objects and classes:
         'accessor-pairs': 'warn',
         // Require braces around arrow function bodies:
-        'arrow-body-style': 'warn',
+        'arrow-body-style': 'off',
+        // Stylistically fine, but a bit of an overreach to warn about it
         // Enforce the use of variables within the scope they are defined:
         'block-scoped-var': 'warn',
         // Enforce camelcase naming convention:
         camelcase: 'off',
         // Enforce or disallow capitalization of the first letter of a comment:
-        'capitalized-comments': 'warn',
+        'capitalized-comments': [
+            'warn',
+            'always',
+            {
+                ignoreConsecutiveComments: true,
+            },
+        ],
         // Enforce that class methods utilize this:
         'class-methods-use-this': 'off',
         // Superseded by the Typescript one
@@ -254,13 +261,15 @@ exports.default = {
         // Disallow assignments to native objects or read-only global variables:
         'no-global-assign': 'warn',
         // Disallow shorthand type conversions:
-        'no-implicit-coercion': 'warn',
+        'no-implicit-coercion': 'off',
+        // Shorthands are not bad
         // Disallow declarations in the global scope:
         'no-implicit-globals': 'warn',
         // Disallow the use of eval()-like methods:
         'no-implied-eval': 'warn',
         // Disallow inline comments after code:
-        'no-inline-comments': 'warn',
+        'no-inline-comments': 'off',
+        // Stylistically fine, but a bit of an overreach to warn about it
         // Disallow use of this in contexts where the value of this is undefined:
         'no-invalid-this': 'warn',
         // Disallow the use of the __iterator__ property:
@@ -367,7 +376,8 @@ exports.default = {
         // Disallow void operators:
         'no-void': 'warn',
         // Disallow specified warning terms in comments:
-        'no-warning-comments': 'warn',
+        'no-warning-comments': 'off',
+        // Comments are not always the best solution, but they are rarely worse than nothing
         // Disallow with statements:
         'no-with': 'warn',
         // Require or disallow method and property shorthand syntax for object literals:
@@ -391,7 +401,7 @@ exports.default = {
         // Disallow use of Object.prototype.hasOwnProperty.call() and prefer use of Object.hasOwn():
         'prefer-object-has-own': 'warn',
         // Disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead:
-        'prefer-object-spread': 'warn',
+        'prefer-object-spread': 'error',
         // Require using Error objects as Promise rejection reasons:
         'prefer-promise-reject-errors': 'warn',
         // Disallow use of the RegExp constructor in favor of regular expression literals:
@@ -401,7 +411,7 @@ exports.default = {
         // Require spread operators instead of .apply():
         'prefer-spread': 'warn',
         // Require template literals instead of string concatenation:
-        'prefer-template': 'warn',
+        'prefer-template': 'error',
         // Enforce the consistent use of the radix argument when using parseInt():
         radix: 'warn',
         // Disallow async functions which have no await expression:

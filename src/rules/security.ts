@@ -1,4 +1,4 @@
-import type { Linter } from 'eslint';
+import type { ExtendedRulesRecord } from '../types';
 
 /**
  * https://github.com/eslint-community/eslint-plugin-security
@@ -35,7 +35,8 @@ export default {
 	'security/detect-non-literal-require': 'error',
 
 	// Detects "variable[key]" as a left- or right-hand assignment operand.
-	'security/detect-object-injection': 'error',
+	'security/detect-object-injection': 'off',
+	// Too common of a case to ban in practice
 
 	// Detects insecure comparisons (==, !=, !== and ===), which check input sequentially.
 	'security/detect-possible-timing-attacks': 'error',
@@ -44,5 +45,5 @@ export default {
 	'security/detect-pseudoRandomBytes': 'error',
 
 	// Detects potentially unsafe regular expressions, which may take a very long time to run, blocking the event loop.
-	'security/detect-unsafe-regex': 'error',
-} as Linter.RulesRecord;
+	'security/detect-unsafe-regex': 'error-when-staging',
+} as ExtendedRulesRecord;

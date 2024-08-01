@@ -5,7 +5,7 @@ This is the unified ESLint configuration of Vi. It errs on the side of caution/s
 ```sh
 
 npm i -D eslint vihealth/eslint-config
-echo "module.exports = require('@vihealth/eslint-config');" > eslint.config.js
+echo "module.exports = require('@vihealth/eslint-config').default.finish();" > eslint.config.js
 ```
 
 And make sure you have `strict` set to `true` in the `compilerOptions` of your `tsconfig.json`.

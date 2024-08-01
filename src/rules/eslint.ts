@@ -1,6 +1,6 @@
 /* eslint-disable	max-lines                    */
 
-import type { Linter } from 'eslint';
+import type { ExtendedRulesRecord } from '../types';
 
 /**
  * This file returns the Vi settings for ESLint's out-of-the-box rules, categories "Possible Problems"
@@ -71,7 +71,7 @@ export default {
 		'no-duplicate-case': 'warn',
 
 		// Disallow duplicate module imports:
-		'no-duplicate-imports': 'warn',
+		'no-duplicate-imports': 'error',
 
 		// Disallow empty character classes in regular expressions:
 		'no-empty-character-class': 'warn',
@@ -178,7 +178,7 @@ export default {
 
 		// Disallow the use of variables before they are defined:
 		'no-use-before-define': [
-			'error',
+			'error-when-staging',
 			{
 				classes: false,
 				functions: false,
@@ -207,7 +207,8 @@ export default {
 		'accessor-pairs': 'warn',
 
 		// Require braces around arrow function bodies:
-		'arrow-body-style': 'warn',
+		'arrow-body-style': 'off',
+		// Stylistically fine, but a bit of an overreach to warn about it
 
 		// Enforce the use of variables within the scope they are defined:
 		'block-scoped-var': 'warn',
@@ -216,7 +217,13 @@ export default {
 		camelcase: 'off',
 
 		// Enforce or disallow capitalization of the first letter of a comment:
-		'capitalized-comments': 'warn',
+		'capitalized-comments': [
+			'warn',
+			'always',
+			{
+				ignoreConsecutiveComments: true,
+			},
+		],
 
 		// Enforce that class methods utilize this:
 		'class-methods-use-this': 'off',
@@ -365,7 +372,8 @@ export default {
 		'no-global-assign': 'warn',
 
 		// Disallow shorthand type conversions:
-		'no-implicit-coercion': 'warn',
+		'no-implicit-coercion': 'off',
+		// Shorthands are not bad
 
 		// Disallow declarations in the global scope:
 		'no-implicit-globals': 'warn',
@@ -374,7 +382,8 @@ export default {
 		'no-implied-eval': 'warn',
 
 		// Disallow inline comments after code:
-		'no-inline-comments': 'warn',
+		'no-inline-comments': 'off',
+		// Stylistically fine, but a bit of an overreach to warn about it
 
 		// Disallow use of this in contexts where the value of this is undefined:
 		'no-invalid-this': 'warn',
@@ -534,7 +543,8 @@ export default {
 		'no-void': 'warn',
 
 		// Disallow specified warning terms in comments:
-		'no-warning-comments': 'warn',
+		'no-warning-comments': 'off',
+		// Comments are not always the best solution, but they are rarely worse than nothing
 
 		// Disallow with statements:
 		'no-with': 'warn',
@@ -570,7 +580,7 @@ export default {
 		'prefer-object-has-own': 'warn',
 
 		// Disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead:
-		'prefer-object-spread': 'warn',
+		'prefer-object-spread': 'error',
 
 		// Require using Error objects as Promise rejection reasons:
 		'prefer-promise-reject-errors': 'warn',
@@ -585,7 +595,7 @@ export default {
 		'prefer-spread': 'warn',
 
 		// Require template literals instead of string concatenation:
-		'prefer-template': 'warn',
+		'prefer-template': 'error',
 
 		// Enforce the consistent use of the radix argument when using parseInt():
 		radix: 'warn',
@@ -620,4 +630,4 @@ export default {
 		// Require or disallow "Yoda" conditions:
 		yoda: 'warn',
 	},
-} as Record<string, Linter.RulesRecord>;
+} as Record<'problems' | 'suggestions', ExtendedRulesRecord>;

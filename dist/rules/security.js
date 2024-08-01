@@ -25,11 +25,12 @@ exports.default = {
     // Detects "require(variable)", which might allow an attacker to load and run arbitrary code, or access arbitrary files on disk.
     'security/detect-non-literal-require': 'error',
     // Detects "variable[key]" as a left- or right-hand assignment operand.
-    'security/detect-object-injection': 'error',
+    'security/detect-object-injection': 'off',
+    // Too common of a case to ban in practice
     // Detects insecure comparisons (==, !=, !== and ===), which check input sequentially.
     'security/detect-possible-timing-attacks': 'error',
     // Detects if "pseudoRandomBytes()" is in use, which might not give you the randomness you need and expect.
     'security/detect-pseudoRandomBytes': 'error',
     // Detects potentially unsafe regular expressions, which may take a very long time to run, blocking the event loop.
-    'security/detect-unsafe-regex': 'error',
+    'security/detect-unsafe-regex': 'error-when-staging',
 };
