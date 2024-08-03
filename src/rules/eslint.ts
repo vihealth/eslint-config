@@ -59,7 +59,7 @@ export default {
 		'no-dupe-args': 'warn',
 
 		// Disallow duplicate class members:
-		'no-dupe-class-members': 'warn',
+		'no-dupe-class-members': 'off',
 
 		// Disallow duplicate conditions in if-else-if chains:
 		'no-dupe-else-if': 'warn',
@@ -164,27 +164,11 @@ export default {
 		'no-unused-private-class-members': 'warn',
 
 		// Disallow unused variables:
-		'no-unused-vars': [
-			'warn',
-			{
-				args: 'all',
-				argsIgnorePattern: '^_',
-				caughtErrors: 'all',
-				caughtErrorsIgnorePattern: '^_',
-				vars: 'all',
-				varsIgnorePattern: '^_',
-			},
-		],
+		'no-unused-vars': 'off',
 
 		// Disallow the use of variables before they are defined:
-		'no-use-before-define': [
-			'error-when-staging',
-			{
-				classes: false,
-				functions: false,
-				variables: true,
-			},
-		],
+		'no-use-before-define': 'off',
+		// Let typescript/no-use-before-define handle this
 
 		// Disallow variable assignments when the value is not used:
 		'no-useless-assignment': 'off',
@@ -233,7 +217,7 @@ export default {
 		complexity: 'warn',
 
 		// Require return statements to either always or never specify values:
-		'consistent-return': 'warn',
+		'consistent-return': 'off',
 
 		// Enforce consistent naming when capturing the current execution context:
 		'consistent-this': 'warn',
@@ -248,10 +232,10 @@ export default {
 		'default-case-last': 'warn',
 
 		// Enforce default parameters to be last:
-		'default-param-last': 'warn',
+		'default-param-last': 'off',
 
 		// Enforce dot notation whenever possible:
-		'dot-notation': 'warn',
+		'dot-notation': 'off',
 
 		// Require the use of === and !==:
 		eqeqeq: 'warn',
@@ -302,7 +286,7 @@ export default {
 		'max-nested-callbacks': 'warn',
 
 		// Enforce a maximum number of parameters in function definitions:
-		'max-params': 'warn',
+		'max-params': 'off',
 
 		// Enforce a maximum number of statements allowed in function blocks:
 		'max-statements': 'off',
@@ -315,7 +299,7 @@ export default {
 		'no-alert': 'warn',
 
 		// Disallow Array constructors:
-		'no-array-constructor': 'warn',
+		'no-array-constructor': 'off',
 
 		// Disallow bitwise operators:
 		'no-bitwise': 'warn',
@@ -345,7 +329,7 @@ export default {
 		'no-empty': 'warn',
 
 		// Disallow empty functions:
-		'no-empty-function': 'warn',
+		'no-empty-function': 'off',
 
 		// Disallow empty static blocks:
 		'no-empty-static-block': 'warn',
@@ -379,14 +363,14 @@ export default {
 		'no-implicit-globals': 'warn',
 
 		// Disallow the use of eval()-like methods:
-		'no-implied-eval': 'warn',
+		'no-implied-eval': 'off',
 
 		// Disallow inline comments after code:
 		'no-inline-comments': 'off',
 		// Stylistically fine, but a bit of an overreach to warn about it
 
 		// Disallow use of this in contexts where the value of this is undefined:
-		'no-invalid-this': 'warn',
+		'no-invalid-this': 'off',
 
 		// Disallow the use of the __iterator__ property:
 		'no-iterator': 'warn',
@@ -404,10 +388,10 @@ export default {
 		'no-lonely-if': 'warn',
 
 		// Disallow function declarations that contain unsafe references inside loop statements:
-		'no-loop-func': 'warn',
+		'no-loop-func': 'off',
 
 		// Disallow magic numbers:
-		'no-magic-numbers': ['warn', { ignore: [-1, 0, 1, 2, 10, 100, 1000] }],
+		'no-magic-numbers': 'off',
 
 		// Disallow use of chained assignment expressions:
 		'no-multi-assign': 'warn',
@@ -452,7 +436,7 @@ export default {
 		'no-proto': 'warn',
 
 		// Disallow variable redeclaration:
-		'no-redeclare': 'warn',
+		'no-redeclare': 'off',
 
 		// Disallow multiple spaces in regular expressions:
 		'no-regex-spaces': 'warn',
@@ -482,7 +466,7 @@ export default {
 		'no-sequences': 'warn',
 
 		// Disallow variable declarations from shadowing variables declared in the outer scope:
-		'no-shadow': 'warn',
+		'no-shadow': 'off',
 
 		// Disallow identifiers from shadowing restricted names:
 		'no-shadow-restricted-names': 'warn',
@@ -492,7 +476,7 @@ export default {
 		// Disagree with this rule
 
 		// Disallow throwing literals as exceptions:
-		'no-throw-literal': 'warn',
+		'no-throw-literal': 'off',
 
 		// Disallow initializing variables to undefined:
 		'no-undef-init': 'warn',
@@ -507,7 +491,7 @@ export default {
 		'no-unneeded-ternary': 'warn',
 
 		// Disallow unused expressions:
-		'no-unused-expressions': 'warn',
+		'no-unused-expressions': 'off',
 
 		// Disallow unused labels:
 		'no-unused-labels': 'warn',
@@ -525,7 +509,7 @@ export default {
 		'no-useless-concat': 'warn',
 
 		// Disallow unnecessary constructors:
-		'no-useless-constructor': 'warn',
+		'no-useless-constructor': 'off',
 
 		// Disallow unnecessary escape characters:
 		'no-useless-escape': 'warn',
@@ -540,7 +524,7 @@ export default {
 		'no-var': 'warn',
 
 		// Disallow void operators:
-		'no-void': 'warn',
+		'no-void': ['warn', { allowAsStatement: true }],
 
 		// Disallow specified warning terms in comments:
 		'no-warning-comments': 'off',
@@ -565,7 +549,7 @@ export default {
 		'prefer-const': 'warn',
 
 		// Require destructuring from arrays and/or objects:
-		'prefer-destructuring': 'warn',
+		'prefer-destructuring': 'off',
 
 		// Disallow the use of Math.pow in favor of the ** operator:
 		'prefer-exponentiation-operator': 'warn',
@@ -583,7 +567,7 @@ export default {
 		'prefer-object-spread': 'error',
 
 		// Require using Error objects as Promise rejection reasons:
-		'prefer-promise-reject-errors': 'warn',
+		'prefer-promise-reject-errors': 'off',
 
 		// Disallow use of the RegExp constructor in favor of regular expression literals:
 		'prefer-regex-literals': 'warn',
@@ -601,7 +585,7 @@ export default {
 		radix: 'warn',
 
 		// Disallow async functions which have no await expression:
-		'require-await': 'warn',
+		'require-await': 'off',
 
 		// Enforce the use of u or v flag on RegExp:
 		'require-unicode-regexp': 'warn',

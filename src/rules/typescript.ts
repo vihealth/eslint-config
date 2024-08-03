@@ -193,7 +193,7 @@ export default {
 	'typescript/no-loss-of-precision': 'warn',
 
 	// Disallow magic numbers:
-	'typescript/no-magic-numbers': 'off',
+	'typescript/no-magic-numbers': ['error-when-staging', { ignore: [-1, 0, 1, 2, 10, 100, 1000] }],
 
 	// Disallow the void operator except when used to discard a value:
 	'typescript/no-meaningless-void-operator': 'warn',
@@ -239,7 +239,7 @@ export default {
 	'typescript/no-this-alias': 'warn',
 
 	// Disallow throwing literals as exceptions:
-	'typescript/no-throw-literal': 'off',
+	'typescript/no-throw-literal': 'error',
 
 	// Disallow type aliases:
 	'typescript/no-type-alias': 'off',
@@ -316,10 +316,17 @@ export default {
 	],
 
 	// Disallow the use of variables before they are defined:
-	'typescript/no-use-before-define': 'warn',
+	'typescript/no-use-before-define': [
+		'error-when-staging',
+		{
+			classes: false,
+			functions: false,
+			variables: true,
+		},
+	],
 
 	// Disallow unnecessary constructors:
-	'typescript/no-useless-constructor': 'warn',
+	'typescript/no-useless-constructor': 'error',
 
 	// Disallow empty exports that don't change anything in a module file:
 	'typescript/no-useless-empty-export': 'warn',
@@ -328,7 +335,8 @@ export default {
 	'typescript/no-useless-template-literals': 'off',
 
 	// Disallow require statements except in import statements:
-	'typescript/no-var-requires': 'warn',
+	'typescript/no-var-requires': 'off',
+	// Rule deprecated
 
 	// Disallow using confusing built-in primitive class wrappers:
 	'typescript/no-wrapper-object-types': 'warn',
@@ -382,7 +390,7 @@ export default {
 	'typescript/prefer-optional-chain': 'warn',
 
 	// Require using Error objects as Promise rejection reasons:
-	'typescript/prefer-promise-reject-errors': 'warn',
+	'typescript/prefer-promise-reject-errors': 'error',
 
 	// Require private members to be marked as readonly if they're never modified outside of the constructor:
 	'typescript/prefer-readonly': 'warn',
@@ -417,7 +425,7 @@ export default {
 	'typescript/require-array-sort-compare': 'warn',
 
 	// Disallow async functions which do not return promises and have no await expression:
-	'typescript/require-await': 'warn',
+	'typescript/require-await': 'error-when-staging',
 
 	// Require both operands of addition to be the same type and be bigint, number, or string:
 	'typescript/restrict-plus-operands': 'warn',
