@@ -214,7 +214,8 @@ export default {
 		// Superseded by the Typescript one
 
 		// Enforce a maximum cyclomatic complexity allowed in a program:
-		complexity: 'warn',
+		complexity: 'off',
+		// Disabled because opaque, and complexity can be negated by good coding practices
 
 		// Require return statements to either always or never specify values:
 		'consistent-return': 'off',
