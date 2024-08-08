@@ -84,6 +84,10 @@ export class ViEslintConfigApi {
 			this.#config.rules = {};
 		}
 		for (const rule of rules) {
+			if (!this.#config.rules[rule] || this.#config.rules[rule] === 'off') {
+				// eslint-disable-next-line no-console
+				console.error(`Rule "${rule}" was already disabled.`);
+			}
 			this.#config.rules[rule] = 'off';
 		}
 		return this;

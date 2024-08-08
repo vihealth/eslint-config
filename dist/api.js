@@ -77,6 +77,10 @@ class ViEslintConfigApi {
             __classPrivateFieldGet(this, _ViEslintConfigApi_config, "f").rules = {};
         }
         for (const rule of rules) {
+            if (!__classPrivateFieldGet(this, _ViEslintConfigApi_config, "f").rules[rule] || __classPrivateFieldGet(this, _ViEslintConfigApi_config, "f").rules[rule] === 'off') {
+                // eslint-disable-next-line no-console
+                console.error(`Rule "${rule}" was already disabled.`);
+            }
             __classPrivateFieldGet(this, _ViEslintConfigApi_config, "f").rules[rule] = 'off';
         }
         return this;

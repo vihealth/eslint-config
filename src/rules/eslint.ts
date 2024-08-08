@@ -26,7 +26,8 @@ export default {
 		'no-async-promise-executor': 'warn',
 
 		// Disallow await inside of loops:
-		'no-await-in-loop': 'warn',
+		'no-await-in-loop': 'off',
+		// Disabled because it's not always a problem
 
 		// Disallow reassigning class members:
 		'no-class-assign': 'warn',
@@ -239,7 +240,7 @@ export default {
 		'dot-notation': 'off',
 
 		// Require the use of === and !==:
-		eqeqeq: 'warn',
+		eqeqeq: 'error',
 
 		// Require function names to match the name of the variable or property to which they are assigned:
 		'func-name-matching': 'warn',
@@ -278,10 +279,12 @@ export default {
 		'max-depth': 'warn',
 
 		// Enforce a maximum number of lines per file:
-		'max-lines': 'warn',
+		'max-lines': 'off',
+		// Disabled because too arbitrary
 
 		// Enforce a maximum number of lines of code in a function:
-		'max-lines-per-function': ['warn', { max: 200, skipComments: true }],
+		'max-lines-per-function': 'off',
+		// Disabled because too arbitrary
 
 		// Enforce a maximum depth that callbacks can be nested:
 		'max-nested-callbacks': 'warn',
@@ -294,7 +297,8 @@ export default {
 		// Nice idea, but not practical
 
 		// Require constructor names to begin with a capital letter:
-		'new-cap': 'warn',
+		'new-cap': 'off',
+		// Disabled because not always true depending on naming conventions
 
 		// Disallow the use of alert, confirm, and prompt:
 		'no-alert': 'warn',
@@ -315,7 +319,8 @@ export default {
 		'no-console': 'warn',
 
 		// Disallow continue statements:
-		'no-continue': 'warn',
+		'no-continue': 'off',
+		// Disagree with this rule
 
 		// Disallow deleting variables:
 		'no-delete-var': 'warn',
