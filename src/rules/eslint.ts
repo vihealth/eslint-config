@@ -482,7 +482,7 @@ export default {
 		// Disagree with this rule
 
 		// Disallow throwing literals as exceptions:
-		'no-throw-literal': 'off',
+		'no-throw-literal': 'error',
 
 		// Disallow initializing variables to undefined:
 		'no-undef-init': 'warn',

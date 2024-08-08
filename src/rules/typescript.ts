@@ -239,7 +239,7 @@ export default {
 	'typescript/no-this-alias': 'warn',
 
 	// Disallow throwing literals as exceptions:
-	'typescript/no-throw-literal': 'error',
+	'typescript/no-throw-literal': 'off',
 
 	// Disallow type aliases:
 	'typescript/no-type-alias': 'off',

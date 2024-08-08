@@ -162,7 +162,7 @@ exports.default = {
     // Disallow aliasing this:
     'typescript/no-this-alias': 'warn',
     // Disallow throwing literals as exceptions:
-    'typescript/no-throw-literal': 'error',
+    'typescript/no-throw-literal': 'off',
     // Disallow type aliases:
     'typescript/no-type-alias': 'off',
     // Disallow unnecessary equality comparisons against boolean literals:

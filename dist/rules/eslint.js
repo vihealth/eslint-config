@@ -332,7 +332,7 @@ exports.default = {
         'no-ternary': 'off',
         // Disagree with this rule
         // Disallow throwing literals as exceptions:
-        'no-throw-literal': 'off',
+        'no-throw-literal': 'error',
         // Disallow initializing variables to undefined:
         'no-undef-init': 'warn',
         // Disallow the use of undefined as an identifier:
