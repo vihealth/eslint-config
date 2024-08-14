@@ -29,6 +29,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^22.0.2",
+		"@vihealth/prettier-config": "github:vihealth/prettier-config",
 		"eslint": "^9.8.0"
 	}
 }

@@ -1,5 +1,4 @@
 "use strict";
-/* eslint-disable	max-lines                    */
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This file returns the Vi settings for ESLint's out-of-the-box rules, categories "Possible Problems"
@@ -301,7 +300,8 @@ exports.default = {
         // Disallow reassigning function parameters:
         'no-param-reassign': 'warn',
         // Disallow the unary operators ++ and --:
-        'no-plusplus': 'warn',
+        'no-plusplus': 'off',
+        // Fucking love a plusplus
         // Disallow the use of the __proto__ property:
         'no-proto': 'warn',
         // Disallow variable redeclaration:

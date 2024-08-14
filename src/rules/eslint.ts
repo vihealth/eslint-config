@@ -1,5 +1,3 @@
-/* eslint-disable	max-lines                    */
-
 import type { ExtendedRulesRecord } from '../types';
 
 /**
@@ -436,7 +434,8 @@ export default {
 		'no-param-reassign': 'warn',
 
 		// Disallow the unary operators ++ and --:
-		'no-plusplus': 'warn',
+		'no-plusplus': 'off',
+		// Fucking love a plusplus
 
 		// Disallow the use of the __proto__ property:
 		'no-proto': 'warn',

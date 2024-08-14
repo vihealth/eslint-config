@@ -1,5 +1,4 @@
 "use strict";
-/* eslint-disable	max-lines                    */
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This file returns the Vi settings for @typescript-eslint's rules. See also:
@@ -253,7 +252,8 @@ exports.default = {
     // Require each enum member value to be explicitly initialized:
     'typescript/prefer-enum-initializers': 'warn',
     // Enforce the use of Array.prototype.find() over Array.prototype.filter() followed by [0] when looking for a single result:
-    'typescript/prefer-find': 'warn',
+    'typescript/prefer-find': 'error',
+    // Hard error, because real mistake with real consequences
     // Enforce the use of for-of loop over the standard for loop where possible:
     'typescript/prefer-for-of': 'warn',
     // Enforce using function types instead of interfaces with call signatures:

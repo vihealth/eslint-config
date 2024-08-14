@@ -1,5 +1,3 @@
-/* eslint-disable	max-lines                    */
-
 import type { ExtendedRulesRecord } from '../types';
 
 /**
@@ -366,7 +364,8 @@ export default {
 	'typescript/prefer-enum-initializers': 'warn',
 
 	// Enforce the use of Array.prototype.find() over Array.prototype.filter() followed by [0] when looking for a single result:
-	'typescript/prefer-find': 'warn',
+	'typescript/prefer-find': 'error',
+	// Hard error, because real mistake with real consequences
 
 	// Enforce the use of for-of loop over the standard for loop where possible:
 	'typescript/prefer-for-of': 'warn',
