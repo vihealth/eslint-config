@@ -23,14 +23,12 @@
 		"eslint-plugin-canonical": "^4.18.1",
 		"eslint-plugin-prettier": "^5.2.1",
 		"eslint-plugin-security": "^3.0.1",
-		"eslint-plugin-simple-import-sort": "^12.1.1"
-	},
-	"peerDependencies": {
-		"eslint": "^9.8.0"
+		"eslint-plugin-simple-import-sort": "^12.1.1",
+		"eslint": "^9.9.0",
+		"prettier": "^3.3.3"
 	},
 	"devDependencies": {
 		"@types/node": "^22.0.2",
-		"@vihealth/prettier-config": "github:vihealth/prettier-config",
-		"eslint": "^9.8.0"
+		"@vihealth/prettier-config": "github:vihealth/prettier-config"
 	}
 }
