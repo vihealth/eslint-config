@@ -1,3 +1,5 @@
+/* global console */
+
 import type { ESLint, Linter } from 'eslint';
 
 import defaults from './defaults';

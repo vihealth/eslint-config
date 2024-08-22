@@ -28,9 +28,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const eslint_plugin_1 = __importDefault(require("@typescript-eslint/eslint-plugin"));
 const eslintParser = __importStar(require("@typescript-eslint/parser"));
+const eslint_plugin_canonical_1 = __importDefault(require("eslint-plugin-canonical"));
 const eslint_plugin_prettier_1 = __importDefault(require("eslint-plugin-prettier"));
 const eslint_plugin_security_1 = __importDefault(require("eslint-plugin-security"));
 const eslint_plugin_simple_import_sort_1 = __importDefault(require("eslint-plugin-simple-import-sort"));
+const canonical_1 = __importDefault(require("./rules/canonical"));
 const eslint_1 = __importDefault(require("./rules/eslint"));
 const importsort_1 = __importDefault(require("./rules/importsort"));
 const prettier_1 = __importDefault(require("./rules/prettier"));
@@ -51,10 +53,12 @@ exports.default = {
         },
     },
     plugins: {
+        // eslint-disable-next-line typescript/no-unsafe-assignment
+        canonical: eslint_plugin_canonical_1.default,
         importsort: eslint_plugin_simple_import_sort_1.default,
         prettier: eslint_plugin_prettier_1.default,
         security: eslint_plugin_security_1.default,
         typescript: eslint_plugin_1.default,
     },
-    rules: Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, eslint_1.default.problems), eslint_1.default.suggestions), importsort_1.default), typescript_1.default), security_1.default), prettier_1.default),
+    rules: Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, eslint_1.default.problems), eslint_1.default.suggestions), importsort_1.default), typescript_1.default), security_1.default), prettier_1.default), canonical_1.default),
 };

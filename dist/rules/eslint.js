@@ -413,7 +413,8 @@ exports.default = {
         // Enforce sorted import declarations within modules:
         'sort-imports': 'off',
         // Require object keys to be sorted:
-        'sort-keys': 'warn',
+        'sort-keys': 'off',
+        // Superseded by canonical/sort-keys, which is autofixable
         // Require variables within the same declaration block to be sorted:
         'sort-vars': 'warn',
         // Require or disallow strict mode directives:
