@@ -1,12 +1,10 @@
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import * as eslintParser from '@typescript-eslint/parser';
 import type { ESLint } from 'eslint';
-import eslintPluginCanonical from 'eslint-plugin-canonical';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginSecurity from 'eslint-plugin-security';
 import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 
-import canonicalRules from './rules/canonical';
 import eslintRules from './rules/eslint';
 import simpleImportSortRules from './rules/importsort';
 import prettierRules from './rules/prettier';
@@ -29,9 +27,6 @@ export default {
 		},
 	},
 	plugins: {
-		// eslint-disable-next-line typescript/no-unsafe-assignment
-		canonical: eslintPluginCanonical,
-
 		importsort: eslintPluginSimpleImportSort,
 
 		prettier: eslintPluginPrettier,
@@ -47,6 +42,5 @@ export default {
 		...typescriptEslintRules,
 		...securityRules,
 		...prettierRules,
-		...canonicalRules,
 	},
 } as ExtendedConfig;

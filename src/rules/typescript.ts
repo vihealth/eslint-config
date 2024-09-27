@@ -215,7 +215,9 @@ export default {
 	'typescript/no-non-null-asserted-optional-chain': 'warn',
 
 	// Disallow non-null assertions using the ! postfix operator:
-	'typescript/no-non-null-assertion': 'warn',
+	'typescript/no-non-null-assertion': 'error-when-staging',
+	// When done right, this assertion is rarely needed. If you're not sure, null-check the fucker
+	// anyway and throw if null - thát is a real assertion.
 
 	// Disallow variable redeclaration:
 	'typescript/no-redeclare': 'off',
